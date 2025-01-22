@@ -18,6 +18,7 @@ productRouter.post(
   ]),
   addProduct
 );
+
 productRouter.post("/single", singleProduct);
 productRouter.post("/remove", removeProduct);
 productRouter.get("/list", listProduct);

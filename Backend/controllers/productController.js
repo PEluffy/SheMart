@@ -96,9 +96,34 @@ const listProduct = async (req, res) => {
 };
 
 //function for remove Product
-const removeProduct = async (req, res) => {};
+const removeProduct = async (req, res) => {
+  try {
+    await productModel.findByIdAndDelete(req.body.id);
+    res.json({ sucess: true, message: "product Removed" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 //function for asingle Product
-const singleProduct = async (req, res) => {};
+const singleProduct = async (req, res) => {
+  try {
+    const { productID } = req.body;
+    const product = await productModel.findById(productID);
+    // console.log(product);
+
+    if (!product) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Product not found" });
+    }
+
+    res.json({ success: true, product });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 export { listProduct, addProduct, removeProduct, singleProduct };
