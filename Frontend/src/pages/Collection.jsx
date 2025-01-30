@@ -79,7 +79,7 @@ const Collection = () => {
   useEffect(() => {
     // console.log("filter applied");
     applyFilterCategory();
-  }, [bestSeller, subCategory, search, showSearch]);
+  }, [bestSeller, subCategory, search, showSearch, products]);
 
   useEffect(() => {
     sortProduct(sortType);

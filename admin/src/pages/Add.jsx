@@ -54,7 +54,7 @@ const Add = ({ token }) => {
         setDescription("");
         setPrice("");
         setCategory("");
-        setSubCategory("Tops");
+        setSubCategory("");
         setBestseller(false);
         setSizes([]);
       } else {
@@ -108,7 +108,7 @@ const Add = ({ token }) => {
         <div>
           <label htmlFor="video">
             {videoUrl ? (
-              <video className="w-20" src={videoUrl} controls />
+              <video className="w-20" src={videoUrl} />
             ) : (
               <img
                 className="w-20"

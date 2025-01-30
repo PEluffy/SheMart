@@ -14,7 +14,7 @@ const addProduct = async (req, res) => {
       bestseller,
     } = req.body;
 
-    console.log("Request Body:", req.body);
+    // console.log("Request Body:", req.body);
 
     if (!name || !description || !price || !category) {
       return res.status(400).json({
@@ -50,8 +50,8 @@ const addProduct = async (req, res) => {
     );
 
     // console.log("Request Files:", image, video);
-    console.log("Images URL:", imagesUrl);
-    console.log("Videos URL:", videoUrl);
+    // console.log("Images URL:", imagesUrl);
+    // console.log("Videos URL:", videoUrl);
 
     // Saving data in mongodb
     const productData = {
